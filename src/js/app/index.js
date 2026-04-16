@@ -100,10 +100,22 @@ function loadStops(splashScreen, stopMenu, errorScreen) {
     function (pos) {
       console.log('SRV: Location: ' + pos.coords.latitude + ', ' +  pos.coords.longitude);
 
-      // HUN coordinate for cloudpebble testing
+      // HUN coordinate for cloudpebble testing (Ferenciek)
       // pos = { coords: {
       //   latitude: 47.4924430302,
       //   longitude: 19.0527914555
+      // }};
+
+      // HUN coordinate for cloudpebble testing (Zuglo)
+      // pos = { coords: {
+      //   latitude: 47.5113,
+      //   longitude: 19.0992
+      // }};
+
+      // HUN coordinate for cloudpebble testing (Szentlelek ter)
+      // pos = { coords: {
+      //   latitude: 47.54008,
+      //   longitude: 19.04581
       // }};
 
       Futar.fetchStops(pos.coords.latitude, pos.coords.longitude, function(resp) {
