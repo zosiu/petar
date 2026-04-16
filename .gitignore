@@ -1,3 +1,23 @@
-build
-lock-waf_darwin_build
+# Pebble build output
+build/
+*.pbw
+*.bin
+*.elf
+*.map
+
+# Waf build system
+lock-waf_*_build
+.waf-*
+
+# Python bytecode
+*.pyc
+*.pyo
+
+# macOS
 .DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
