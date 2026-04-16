@@ -5,6 +5,7 @@ var Futar = {};
 Futar.fetchStops = function(latitude, longitude, callback) {
   Futar.latitude = latitude;
   Futar.longitude = longitude;
+  Futar.apiKey = localStorage.getItem('apiKey') || '';
 
   Futar.callback = callback;
 
@@ -152,13 +153,15 @@ Futar._departuresUrl = function() {
          '&lat=' + Futar.latitude +
          '&lon=' + Futar.longitude +
          '&clientLat=' + Futar.latitude +
-         '&clientLon=' + Futar.longitude;
+         '&clientLon=' + Futar.longitude +
+         '&key=' + Futar.apiKey;
 };
 
 
 Futar._tripUrl = function(tripId) {
   return 'https://futar.bkk.hu/api/query/v1/ws/otp/api/where/trip-details.json?' +
-         'tripId=' + tripId;
+         'tripId=' + tripId +
+         '&key=' + Futar.apiKey;
 };
 
 

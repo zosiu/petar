@@ -1,0 +1,21 @@
+[
+  {
+    "type": "heading",
+    "defaultValue": "Petar Settings"
+  },
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "input",
+        "messageKey": "apiKey",
+        "label": "BKK Futár API Key",
+        "defaultValue": ""
+      }
+    ]
+  },
+  {
+    "type": "submit",
+    "defaultValue": "Save Settings"
+  }
+]

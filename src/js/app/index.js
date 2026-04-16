@@ -1,5 +1,20 @@
 require('./util');
 
+var Clay = require('vendor/clay');
+var clayConfig = require('./clay-config');
+var clay = new Clay(clayConfig, null, { autoHandleEvents: false });
+
+Pebble.addEventListener('showConfiguration', function() {
+  Pebble.openURL(clay.generateUrl());
+});
+
+Pebble.addEventListener('webviewclosed', function(e) {
+  if (!e || !e.response) { return; }
+  var settings = clay.getSettings(e.response, false);
+  var apiKey = settings.apiKey && typeof settings.apiKey === 'object' ? settings.apiKey.value : settings.apiKey;
+  localStorage.setItem('apiKey', apiKey);
+});
+
 var UI = require('ui');
 var Vibe = require('ui/vibe');
 //var Accel = require('ui/accel');

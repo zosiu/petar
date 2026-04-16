@@ -16,7 +16,7 @@ safe.indent = '    ';
 
 /* Translates a source line position to the originating file */
 safe.translatePos = function(name, lineno, colno) {
-  if (name === safe.translateName) {
+  if (name === safe.translateName && typeof __loader !== 'undefined') {
     var pkg = __loader.getPackageByLineno(lineno);
     if (pkg) {
       name = pkg.filename;
