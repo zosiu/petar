@@ -152,4 +152,11 @@ var stopMenu = new UI.Menu();
 //   loadStops(splashScreen, stopMenu);
 // });
 
-loadStops(splashScreen, stopMenu, errorScreen);
+var apiKey = localStorage.getItem('apiKey');
+if (!apiKey) {
+  splashScreen.title('BKK opendata API key needed');
+  splashScreen.subtitle('set it in settings');
+  splashScreen.show();
+} else {
+  loadStops(splashScreen, stopMenu, errorScreen);
+}

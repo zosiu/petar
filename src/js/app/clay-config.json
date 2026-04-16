@@ -10,7 +10,7 @@
         "type": "input",
         "messageKey": "apiKey",
         "label": "BKK Futár API Key",
-        "defaultValue": ""
+        "defaultValue": "get one from https://opendata.bkk.hu/keys"
       }
     ]
   },
